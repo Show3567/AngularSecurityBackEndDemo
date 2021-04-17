@@ -6,24 +6,24 @@ This is a repo to show a node.js backend witch present RESTFul API, JWT, Encodin
 
 ### Library List for this demo:
 
-> **Joi**: Validate http request.
+> **Joi**:          Validate http request.
 
-> **bcrypt**: Encrypt user password.
+> **bcrypt**:       Encrypt user password.
 
-> **compression**: Compress project.
+> **compression**:  Compress project.
 
-> **config**: Reuse values.
+> **config**:       Reuse values.
 
-> **express**: Nodejs framwork.
+> **express**:      Nodejs framwork.
 
 > **jsonwebtoken**: Generate jwt.
 
-> **lodash**: Manage js data.
+> **lodash**:       Manage js data.
 
-> **moment**: Manage date time.
+> **moment**:       Manage date time.
 
-> **mongoose**: MongoDB lib.
+> **mongoose**:     MongoDB lib.
 
-> **nodemon**: Live server in node everionment.
+> **nodemon**:      Live server in node everionment.
 
-> **winston**: Record Log.
+> **winston**:      Record Log.
