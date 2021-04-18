@@ -7,7 +7,7 @@ const { Product, validate } = require('../models/product');
 
 router.get("/", auth, async (req, res) => {
     const id = req._id;
-    console.log(req);
+    console.log(id);
 
     const product = await Product.find().sort({ introductionDate: 1 });
     res.send(product);

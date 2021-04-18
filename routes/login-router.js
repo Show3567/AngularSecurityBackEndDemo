@@ -20,18 +20,20 @@ router.post("/", async (req, res) => {
     if (!validPassword) return res.status(400).send('Invalid email or password.');
 
     const token = user.generateAuthToken();
-    
-    res.send({
+
+    const infoBack = {
         userName: user.name,
         bearerToken: token,
         isAuthenticated: user.isAdmin,
-
-        canAccessProducts: user.claim.canAccessProducts,
-        canAddProducts: user.claim.canAddProducts,
-        canSaveProduct: user.claim.canSaveProduct,
-        canAccessCategories: user.claim.canAccessCategories,
-        canAddCategory: user.claim.canAddCategory,
-    });
+        claim: {
+            canAccessProducts: user.claim.canAccessProducts,
+            canAddProducts: user.claim.canAddProducts,
+            canSaveProduct: user.claim.canSaveProduct,
+            canAccessCategories: user.claim.canAccessCategories,
+            canAddCategory: user.claim.canAddCategory,
+        }
+    }
+    res.send(infoBack);
 });
 
 const validate = (user) => {
