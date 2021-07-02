@@ -27,3 +27,5 @@ This is a repo to show a node.js backend witch present RESTFul API, JWT, Encodin
 > **nodemon**:      Live server in node everionment.
 
 > **winston**:      Record Log.
+
+### Run: nodemon index.js
