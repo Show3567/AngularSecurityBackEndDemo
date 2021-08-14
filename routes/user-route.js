@@ -46,6 +46,7 @@ router.post("/", async (req, res) => {
     await user.save();
 
     const token = user.generateAuthToken(); // put the jwt token in the header
+    
     res.header('bearerToken', token)
         .send(_.pick(user, ['name', 'password', 'isAdmin', 'claim']));
 

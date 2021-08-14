@@ -61,3 +61,7 @@
 {"metadata":{},"level":"error","message":"Joi is not defined"}
 {"metadata":{"driver":true,"name":"MongoError","index":0,"code":11000,"keyPattern":{"name":1},"keyValue":{"name":"Dio"}},"level":"error","message":"E11000 duplicate key error collection: angularSecurityBackEnd.users index: name_1 dup key: { name: \"Dio\" }"}
 {"metadata":{"driver":true,"name":"MongoError","index":0,"code":11000,"keyPattern":{"name":1},"keyValue":{"name":"Jojo"}},"level":"error","message":"E11000 duplicate key error collection: angularSecurityBackEnd.users index: name_1 dup key: { name: \"Jojo\" }"}
+{"metadata":{},"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms"}
+{"metadata":{},"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms"}
+{"metadata":{},"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms"}
+{"metadata":{},"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms"}
