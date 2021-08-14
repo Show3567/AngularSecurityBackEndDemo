@@ -17,7 +17,9 @@ router.get("/:id", async (req, res) => {
 
     console.log(req.params);
     const product = await Product.findOne({ _id: req.params.id });
-    if (!product) return res.status(404).send("product not found.");
+    if (!product) {
+        return res.status(404).send("product not found.");
+    }
 
     res.send(product);
 });
@@ -25,7 +27,9 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
     console.log('req.body: ', req.body);
     const { error } = validate(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
+    if (error) {
+        return res.status(400).send(error.details[0].message);
+    }
 
     const product = new Product({
         productName: req.body.productName,
@@ -42,10 +46,14 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
     const product = await Product.find({ _id: req.params.id });
-    if (!product) return res.status(404).send("not found.");
+    if (!product) {
+        return res.status(404).send("not found.");
+    }
 
     const { error } = validate(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
+    if (error) {
+        return res.status(400).send(error.details[0].message);
+    }
 
     await Product.findByIdAndUpdate(
         req.params.id,
@@ -58,7 +66,9 @@ router.put("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
     const product = await Product.find({ _id: req.params.id });
-    if (!product) return res.status(404).send("not found.");
+    if (!product) {
+        return res.status(404).send("not found.");
+    }
 
     await Product.deleteOne({ _id: req.params.id });
     res.send(await Product.find());
