@@ -39,7 +39,8 @@ router.post("/", async (req, res) => {
             canAddCategory: user.claim.canAddCategory,
         }
     }
-    res.send(infoBack);
+
+    res.header('bearerToken', token).send(infoBack);
 });
 
 const validate = (user) => {
