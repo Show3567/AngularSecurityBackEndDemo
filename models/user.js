@@ -28,10 +28,19 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.methods.generateAuthToken = function () {
+    
     const token = jwt.sign(
-        { _id: this._id, isAdmin: this.isAdmin }, // jwt hold data;
-        config.get('jwtPrivateKey'), // private key;
-        { expiresIn: '24h' } // expire time; 
+        // jwt hold data;
+        { 
+            _id: this._id, 
+            isAdmin: this.isAdmin, 
+            userName: this.name, 
+            claim: this.claim 
+        }, 
+        // private key;
+        config.get('jwtPrivateKey'),
+        // expire time;  
+        { expiresIn: '24h' } 
     );
     return token;
 }
